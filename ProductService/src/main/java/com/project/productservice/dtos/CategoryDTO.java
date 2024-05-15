@@ -1,0 +1,12 @@
+package com.project.productservice.dtos;
+
+import lombok.*;
+
+@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class CategoryDTO {
+    private String name;
+}
