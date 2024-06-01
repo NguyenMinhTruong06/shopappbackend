@@ -40,7 +40,7 @@ public class ProductService implements IProductService{
                         + productDTO.getCategoryId()));
         Product newProduct = Product.builder()
                 .name(productDTO.getName())
-                .price(productDTO.getPrice())
+//                .price(productDTO.getPrice())
                 .thumbnail(productDTO.getThumbnail())
                 .description(productDTO.getDescription())
                 .category(existingCategory)
@@ -60,9 +60,7 @@ public class ProductService implements IProductService{
     public Page<ProductResponse> getAllProducts(String keyword ,Long categoryId,PageRequest pageRequest) {
         Page<Product> productPage;
         productPage = productRepository.searchProducts(categoryId,keyword,pageRequest);
-
         return productPage.map(ProductResponse::fromProduct);
-
 
     }
 
@@ -72,11 +70,11 @@ public class ProductService implements IProductService{
         if(existingProduct != null){
             Category existingCategory = categoryRepository
                     .findById(productDTO.getCategoryId())
-                            .orElseThrow(()-> new DataNotFoundException("Cannot find category with id "+productDTO.getCategoryId()));
+                            .orElseThrow(()-> new ValidationException(HttpStatus.NOT_FOUND,"Cannot find category with id "+productDTO.getCategoryId()));
             existingProduct.setName(productDTO.getName());
             existingProduct.setCategory(existingCategory);
             existingProduct.setDescription(productDTO.getDescription());
-            existingProduct.setPrice(productDTO.getPrice());
+//            existingProduct.setPrice(productDTO.getPrice());
             existingProduct.setThumbnail(productDTO.getThumbnail());
             return productRepository.save(existingProduct);
         }
@@ -140,5 +138,16 @@ public class ProductService implements IProductService{
                 .upload(multipartFile.getBytes(), uploadParams)  //chuyển đổi tệp đa phương tiện thành mảng byte sau đó upload
                 .get("url")                                     //truy xuất URL của tệp
                 .toString();
+    }
+    @Override
+    public void deleteProductImagesByProductId(Long productId) {
+        List<ProductImage> existingImages = productImageRepository.findByProductId(productId);
+        productImageRepository.deleteAll(existingImages);
+    }
+
+    @Override
+    public void deleteProductImagesById(long id) {
+        productImageRepository.deleteById(id);
+
     }
 }

@@ -25,11 +25,13 @@ public class Product extends BaseEntity{
 
     @Column(name="name", nullable = false,length = 255)
     private String name;
-     private Float price;
+//     private Float price;
     @Column(name="thumbnail", nullable = true,length = 255)
      private String thumbnail;
     @Column(name="description")
     private String description;
+
+
 
     @ManyToOne
     @JoinColumn(name="category_id")
@@ -38,6 +40,12 @@ public class Product extends BaseEntity{
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY) // Lazy loading for performance
     @JsonManagedReference
     private List<ProductImage> images;
+
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY) // Lazy loading for performance
+    @JsonManagedReference
+    private List<Option> options;
+
+
 
 
 }

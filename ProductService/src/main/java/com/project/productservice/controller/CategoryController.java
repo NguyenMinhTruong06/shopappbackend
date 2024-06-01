@@ -42,11 +42,12 @@ public class CategoryController {
         return ResponseEntity.ok(categories);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/put/{id}")
     public ResponseEntity<String> updateCategory(@PathVariable long id,@Valid @RequestBody CategoryDTO categoryDTO){
         categoryService.updateCategory(id, categoryDTO);
         return ResponseEntity.ok("update thàng công");
     }
+
     @DeleteMapping ("/{id}")
     public ResponseEntity<String> deleteCategory(@PathVariable long id){
         categoryService.deleteCategory(id);

@@ -6,11 +6,22 @@ import com.project.userservice.model.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.server.SecurityWebFilterChain;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import java.util.Arrays;
+import java.util.List;
 
 import static org.springframework.http.HttpMethod.*;
 
@@ -18,11 +29,16 @@ import static org.springframework.http.HttpMethod.*;
 @Configuration
 @EnableMethodSecurity
 @RequiredArgsConstructor
-public class WebSecurityConfig {
+public class WebSecurityConfig implements WebMvcConfigurer {
     private final JwtTokenFilter jwtTokenFilter;
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http)throws Exception{
-        http.csrf(AbstractHttpConfigurer::disable)
+        http
+                .csrf(AbstractHttpConfigurer::disable)
+
+//                .csrf(csrf -> csrf.disable())
+//                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+
                 .addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class)
                 .authorizeHttpRequests(requests->{
                     requests.requestMatchers(
@@ -54,11 +70,14 @@ public class WebSecurityConfig {
                             .requestMatchers(POST,("/api/v1/orderdetail/**")).hasAnyRole(Role.USER)
                             .requestMatchers(GET,("/api/v1/orderdetail/**")).hasAnyRole(Role.ADMIN,Role.USER)
                             .requestMatchers(DELETE,("/api/v1/orderdetail/**")).hasRole(Role.ADMIN)
+
+                            .requestMatchers(POST,("/api/v1/options/**")).hasAnyRole(Role.ADMIN)
                             .anyRequest().authenticated();
                 });
 
         return http.build();
 
     }
+
 }
 

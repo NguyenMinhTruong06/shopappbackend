@@ -7,6 +7,7 @@ import com.project.productservice.models.Product;
 import com.project.productservice.models.ProductImage;
 import com.project.productservice.responses.ProductResponse;
 
+import com.project.userservice.exception.ValidationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -31,4 +32,6 @@ public interface IProductService {
     ProductImage createProductImage (Long productId, ProductImageDTO productImageDTO) throws Exception;
     List<String> getImageNameByProductId(Long productId);
     String uploadFile(MultipartFile multipartFile, String folderName) throws IOException;
+    void deleteProductImagesByProductId(Long productId);
+    void deleteProductImagesById(long Id);
 }

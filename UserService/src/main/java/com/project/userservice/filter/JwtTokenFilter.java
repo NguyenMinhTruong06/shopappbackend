@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.tuple.Pair;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -33,11 +34,16 @@ public class JwtTokenFilter extends OncePerRequestFilter {
     protected void doFilterInternal(@NonNull HttpServletRequest request
             ,@NonNull HttpServletResponse response
             ,@NonNull FilterChain filterChain) throws ServletException, IOException {
+//        if (HttpMethod.OPTIONS.name().equals(request.getMethod())) {
+//            filterChain.doFilter(request, response);
+//            return;
+//        }
         try{
             if(isBypassToken(request)){
                 filterChain.doFilter(request,response);
                 return;
             }
+
             final String authHeader = request.getHeader("Authorization");
             if (authHeader!=null && authHeader.startsWith("Bearer ")){
                 final String token = authHeader.substring(7);
@@ -70,6 +76,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
                 Pair.of("api/v1/categories/**","GET"),
                 Pair.of("api/v1/users/register","POST"),
                 Pair.of("api/v1/users/login","POST")
+
 
                 );
 

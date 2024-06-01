@@ -10,7 +10,9 @@ import com.project.userservice.model.Role;
 import com.project.userservice.model.User;
 import com.project.userservice.respositories.RoleRepository;
 import com.project.userservice.respositories.UserRepository;
+import jakarta.ws.rs.NotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.apache.http.protocol.HTTP;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -70,12 +72,11 @@ public class UserService implements IUserService{
     public String login(String phoneNumber, String password) {
         Optional<User>optionalUser = userRepository.findByPhoneNumber(phoneNumber);
         if(optionalUser.isEmpty()){
-            throw  new ValidationException(HttpStatus.CONFLICT,"Invalid phonenumber / password");
+            throw  new ValidationException(HttpStatus.NOT_FOUND,"Tài khoản của bạn không tồn tại trong hệ thống");
         }
 
         if(optionalUser.get().getIsActive()!=1){
             throw new ValidationException(HttpStatus.CONFLICT,"Tài khoản của bạn đã bị khoá");
-
         }
 
         User existingUser = optionalUser.get();
@@ -87,8 +88,12 @@ public class UserService implements IUserService{
 //            }
 //        }
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(phoneNumber,password,existingUser.getAuthorities());
-        authenticationManager.authenticate(authenticationToken);
-        return jwtTokenUtil.generateToken(existingUser);
+       try {
+           authenticationManager.authenticate(authenticationToken);
+       }catch (Exception e){
+           throw new ValidationException(HttpStatus.BAD_REQUEST, "Invalid password");
+       }
+       return jwtTokenUtil.generateToken(existingUser);
         // trả vể token
     }
     @Override

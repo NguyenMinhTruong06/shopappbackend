@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="DiscoveryServer" />
+        <module name="shopapp_backend" />
         <module name="UserService" />
         <module name="ProductService" />
         <module name="GateWayService" />
@@ -18,6 +19,7 @@
       <module name="GateWayService" target="17" />
       <module name="ProductService" target="17" />
       <module name="ProductsService" target="17" />
+      <module name="shopapp_backend" target="17" />
       <module name="UserService" target="17" />
     </bytecodeTargetLevel>
   </component>
@@ -28,6 +30,7 @@
       <module name="ProductService" options="-parameters" />
       <module name="ProductsService" options="-parameters" />
       <module name="UserService" options="-parameters" />
+      <module name="shopapp_backend" options="-parameters" />
     </option>
   </component>
 </project>

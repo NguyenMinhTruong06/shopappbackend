@@ -2,10 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/DiscoveryServer" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/GateWayService" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/ProductService" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/UserService" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/shopApp-backend" vcs="Git" />
   </component>
 </project>

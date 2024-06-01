@@ -10,6 +10,7 @@ import com.project.productservice.responses.ProductListResponse;
 import com.project.productservice.responses.ProductResponse;
 import com.project.productservice.services.IProductService;
 
+import com.project.productservice.services.ProductService;
 import com.project.userservice.exception.ValidationException;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -41,7 +42,7 @@ import java.util.UUID;
 @RequestMapping("api/v1/products")
 @RequiredArgsConstructor
 public class ProductController {
-    private final IProductService productService;
+    private final ProductService productService;
 
     @GetMapping("/test")
     public ResponseEntity<?> Test(){
@@ -71,7 +72,7 @@ public class ProductController {
     @GetMapping("/img/{productId}")
     public ResponseEntity<?> viewImg(@PathVariable Long productId) {
         try {
-            // Assume you have a service to fetch the image name by product ID
+
             String imageName = productService.getImageNameByProductId(productId).get(0).toString();
 
             if(imageName != null) {
@@ -104,11 +105,10 @@ public class ProductController {
 
     }
 
-    @PostMapping("post")
+    @PostMapping("/post")
     public ResponseEntity<?> createProduct(@Valid @RequestBody
                                            ProductDTO productDTO,
-                                           // @ModelAttribute ("files") List<MultipartFile>files,
-                                           //  @RequestPart("file") MultipartFile file,
+
                                            BindingResult result) {
 
         try {
@@ -119,9 +119,8 @@ public class ProductController {
                 return ResponseEntity.badRequest().body(errorMessages);
             }
             Product newProduct = productService.createProduct(productDTO);
-
-            productService.createProduct(productDTO);
             return ResponseEntity.ok(newProduct);
+
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
@@ -150,9 +149,6 @@ public class ProductController {
                 if (contentType == null || !contentType.startsWith("image/")) {
                     return ResponseEntity.status(HttpStatus.UNSUPPORTED_MEDIA_TYPE).body("file must be an image");
                 }
-
-
-
                 String imageURL = productService.uploadFile(file, "product");
 
                 ProductImage productImage = productService.createProductImage(
@@ -167,9 +163,42 @@ public class ProductController {
         } catch (DataNotFoundException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
-
-
     }
+//    @PutMapping(value = "uploads/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+//    public ResponseEntity<?> updateImages(@PathVariable("id") Long productId,
+//                                          @ModelAttribute("files") List<MultipartFile> files) throws Exception {
+//        try {
+//            Product existingProduct = productService.getProductById(productId);
+//            files = files == null ? new ArrayList<>() : files;
+//            if (files.size() > ProductImage.MAXIMUM_IMAGES_FER_PRODUCT) {
+//                return ResponseEntity.badRequest().body("Chỉ được upload max 5 img");
+//            }
+//            productService.deleteProductImagesByProductId(productId);
+//            List<ProductImage> productImages = new ArrayList<>();
+//            for (MultipartFile file : files) {
+//                if (file.getSize() == 0) continue;
+//                if (file.getSize() > 10 * 1024 * 1024) {
+//                    return ResponseEntity.status(HttpStatus.PAYLOAD_TOO_LARGE)
+//                            .body("File is too large: Maximum size is 10mb");
+//                }
+//                String contentType = file.getContentType();
+//                if (contentType == null || !contentType.startsWith("image/")) {
+//                    return ResponseEntity.status(HttpStatus.UNSUPPORTED_MEDIA_TYPE).body("file must be an image");
+//                }
+//                String imageURL = productService.uploadFile(file, "product");
+//                ProductImage productImage = productService.createProductImage(
+//                        existingProduct.getId(),
+//                        ProductImageDTO.builder()
+//                                .imageUrl(imageURL.replace("http", "https"))
+//                                .build()
+//                );
+//                productImages.add(productImage);
+//            }
+//            return ResponseEntity.ok().body(productImages);
+//        } catch (DataNotFoundException e) {
+//            return ResponseEntity.badRequest().body(e.getMessage());
+//        }
+//    }
 
 
 
@@ -177,6 +206,7 @@ public class ProductController {
         String contentType = file.getContentType();
         return contentType != null && contentType.startsWith("image/");
     }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteProduct(@PathVariable long id) {
@@ -199,7 +229,7 @@ public class ProductController {
             }
             ProductDTO productDTO = ProductDTO.builder()
                     .name(productName)
-                    .price((float) faker.number().numberBetween(10, 9000000))
+//                    .price((float) faker.number().numberBetween(10, 9000000))
                     .thumbnail("")
                     .description(faker.lorem().sentence())
                     .categoryId((long) faker.number().numberBetween(3, 5))
@@ -224,5 +254,10 @@ public class ProductController {
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
+    }
+    @DeleteMapping ("image/delete/{id}")
+    public ResponseEntity<String> deleteImage(@PathVariable long id){
+        productService.deleteProductImagesById(id);
+        return ResponseEntity.ok("Xoá thàng công id "+id);
     }
 }
