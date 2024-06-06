@@ -6,12 +6,13 @@ import com.project.productservice.dtos.ProductImageDTO;
 import com.project.productservice.excepions.DataNotFoundException;
 import com.project.productservice.models.Product;
 import com.project.productservice.models.ProductImage;
+import com.project.productservice.repositories.ProductRepository;
 import com.project.productservice.responses.ProductListResponse;
 import com.project.productservice.responses.ProductResponse;
-import com.project.productservice.services.IProductService;
+
 
 import com.project.productservice.services.ProductService;
-import com.project.userservice.exception.ValidationException;
+
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.UrlResource;
@@ -21,28 +22,23 @@ import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.util.StringUtils;
+
+
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.UUID;
+import java.util.*;
+
 
 @RestController
 @RequestMapping("api/v1/products")
 @RequiredArgsConstructor
 public class ProductController {
     private final ProductService productService;
+    private final ProductRepository productRepository;
 
     @GetMapping("/test")
     public ResponseEntity<?> Test(){
@@ -207,16 +203,14 @@ public class ProductController {
         return contentType != null && contentType.startsWith("image/");
     }
 
-
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteProduct(@PathVariable long id) {
-        try {
-            productService.deleteProduct(id);
-            return ResponseEntity.ok(String.format("Product with id =%d delete successfully", id));
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
 
+            productService.deleteProduct(id);
+        Map<String, Object> response = new HashMap<>();
+        response.put("message", "Delete success id " + id);
+
+            return ResponseEntity.ok().body(response);
     }
 
     @PostMapping("/generateFakeProducts")
@@ -229,7 +223,7 @@ public class ProductController {
             }
             ProductDTO productDTO = ProductDTO.builder()
                     .name(productName)
-//                    .price((float) faker.number().numberBetween(10, 9000000))
+
                     .thumbnail("")
                     .description(faker.lorem().sentence())
                     .categoryId((long) faker.number().numberBetween(3, 5))

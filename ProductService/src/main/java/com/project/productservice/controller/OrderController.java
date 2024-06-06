@@ -9,6 +9,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
@@ -42,7 +43,7 @@ public class OrderController {
     @GetMapping("user/{user_id}")
     public ResponseEntity<?> getOrders(@Valid @PathVariable("user_id") Long userId) {
         try {
-            List<Order> orders = orderService.findByUserId(userId);
+            List<Order> orders = orderService.findByUserIdAndActiveTrue(userId);
             return ResponseEntity.ok(orders);
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
@@ -74,11 +75,16 @@ public class OrderController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
-
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteOrder(@Valid @PathVariable Long id) throws DataNotFoundException {
         orderService.deleteOrder(id);
         return ResponseEntity.ok("Xoá thành công");
     }
+    @GetMapping("/getall")
+    public ResponseEntity<List<Order>> getAllOrders() {
+        List<Order> orders = orderService.getAllOrder();
+        return ResponseEntity.ok(orders);
+    }
+
 }
 

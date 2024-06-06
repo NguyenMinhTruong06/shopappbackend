@@ -27,17 +27,17 @@ public class OrderDetailResponse {
     private int numberOfProducts;
 
     private Float totalMoney;
-    private String color;
+    private String option;
 
     public static OrderDetailResponse fromOrderDetail(OrderDetail orderDetail){
         return OrderDetailResponse.builder()
                 .id(orderDetail.getId())
                 .orderId(orderDetail.getOrder().getId())
-                .productId(orderDetail.getProduct().getId())
+                .productId(orderDetail.getProductId())
                 .price(orderDetail.getPrice())
                 .numberOfProducts(orderDetail.getNumberOfProducts())
                 .totalMoney(orderDetail.getTotalMoney())
-                .color(orderDetail.getColor())
+                .option(orderDetail.getOption())
                 .build();
     }
 }

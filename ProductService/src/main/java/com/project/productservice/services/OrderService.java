@@ -33,9 +33,10 @@ public class OrderService implements IOrderService{
         modelMapper.typeMap(OrderDTO.class, Order.class).addMappings(mapper ->mapper.skip(Order::setId));
         Order order = new Order();
         modelMapper.map(orderDTO, order);
-        order.setUser(user);
+//        order.setUser(user);
+        order.setUserId(Math.toIntExact(user.getId()));
         order.setOrderDate(new Date());
-        order.setStatus(OrderStatus.PENDING);
+        order.setStatus(OrderStatus.SHIPPED);
         LocalDate shippingDate = orderDTO.getShippingDate()== null ? LocalDate.now(): orderDTO.getShippingDate();
         if (shippingDate== null||shippingDate.isBefore(LocalDate.now())){
             throw new DataNotFoundException("date must be at least today !");
@@ -49,8 +50,12 @@ public class OrderService implements IOrderService{
 
     @Override
     public Order getOrder(Long id) {
-
         return orderRepository.findById(id).orElse(null);
+    }
+
+
+    public List<Order> getAllOrder(){
+        return orderRepository.findOrderByActiveTrue();
     }
 
     @Override
@@ -62,7 +67,8 @@ public class OrderService implements IOrderService{
                 .addMappings(mapper ->mapper.skip(Order::setId));
 
         modelMapper.map(orderDTO,order);
-        order.setUser(existingUser);
+//        order.setUser(existingUser);
+        order.setUserId(Math.toIntExact(existingUser.getId()));
         return orderRepository.save(order);
 
     }
@@ -78,8 +84,8 @@ public class OrderService implements IOrderService{
     }
 
     @Override
-    public List<Order> findByUserId(Long userId) {
+    public List<Order> findByUserIdAndActiveTrue(Long userId) {
 
-        return orderRepository.findByUserId(userId);
+        return orderRepository.findByUserIdAndActiveTrue(userId);
     }
 }

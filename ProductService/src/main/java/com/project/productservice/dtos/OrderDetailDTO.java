@@ -21,14 +21,15 @@ public class OrderDetailDTO {
     private Float price;
 
 
-    @JsonProperty("number_of_product")
+    @JsonProperty("number_of_products")
     @Min(value = 1,message = "number_of_product must be >0")
     private int numberOfProduct;
 
     @JsonProperty("total_money")
     @Min(value = 0,message = "total money must be >0")
     private Float totalMoney;
-    private String color;
+    @JsonProperty("product_option")
+    private String option;
 
 
 }

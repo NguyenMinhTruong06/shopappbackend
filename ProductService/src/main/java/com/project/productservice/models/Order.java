@@ -23,10 +23,11 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
-
+    //    @ManyToOne
+//    @JoinColumn(name = "user_id")
+//    private User user;
+    @Column(name = "user_id")
+    private int userId;
     @Column(name = "fullname")
     private String fullName;
 
@@ -67,10 +68,10 @@ public class Order {
     private String paymentMethod;
     @Column(name = "active")
     private Boolean active;
-@OneToMany(mappedBy = "order",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-@JsonManagedReference
-    private List<OrderDetail> orderDetails;
 
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<OrderDetail> orderDetails;
 
 
 }

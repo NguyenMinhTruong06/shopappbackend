@@ -62,12 +62,12 @@ public class WebSecurityConfig implements WebMvcConfigurer {
 
 
                             .requestMatchers(PUT,("/api/v1/orders")).hasRole(Role.ADMIN)
-                            .requestMatchers(POST,("/api/v1/orders/**")).hasAnyRole(Role.USER)
-                            .requestMatchers(GET,("/api/v1/orders/**")).hasAnyRole(Role.ADMIN,Role.USER)
+                            .requestMatchers(POST,("/api/v1/orders/**")).hasAnyRole(Role.USER,Role.ADMIN)
+                            .requestMatchers(GET,("/api/v1/orders/**")).permitAll()
                             .requestMatchers(DELETE,("/api/v1/orders/**")).hasRole(Role.ADMIN)
 
                             .requestMatchers(PUT,("/api/v1/orderdetail")).hasRole(Role.ADMIN)
-                            .requestMatchers(POST,("/api/v1/orderdetail/**")).hasAnyRole(Role.USER)
+                            .requestMatchers(POST,("/api/v1/orderdetail/**")).permitAll()
                             .requestMatchers(GET,("/api/v1/orderdetail/**")).hasAnyRole(Role.ADMIN,Role.USER)
                             .requestMatchers(DELETE,("/api/v1/orderdetail/**")).hasRole(Role.ADMIN)
 

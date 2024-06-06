@@ -11,30 +11,29 @@ import java.util.List;
 
 
 @Entity
-@Table(name ="products")
+@Table(name = "products")
 @Setter
 @Data
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Product extends BaseEntity{
+public class Product extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="name", nullable = false,length = 255)
+    @Column(name = "name", nullable = false, length = 255)
     private String name;
-//     private Float price;
-    @Column(name="thumbnail", nullable = true,length = 255)
-     private String thumbnail;
-    @Column(name="description")
+    //     private Float price;
+    @Column(name = "thumbnail", nullable = true, length = 255)
+    private String thumbnail;
+    @Column(name = "description")
     private String description;
 
 
-
     @ManyToOne
-    @JoinColumn(name="category_id")
+    @JoinColumn(name = "category_id")
     private Category category;
 
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY) // Lazy loading for performance
@@ -44,7 +43,6 @@ public class Product extends BaseEntity{
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY) // Lazy loading for performance
     @JsonManagedReference
     private List<Option> options;
-
 
 
 

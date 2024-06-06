@@ -16,5 +16,5 @@ public interface IOrderService {
 
     void deleteOrder(Long id) throws DataNotFoundException;
 
-    List<Order> findByUserId(Long userId);
+    List<Order> findByUserIdAndActiveTrue(Long userId);
 }

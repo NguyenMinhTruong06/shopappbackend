@@ -27,11 +27,11 @@ public class OrderDetailService implements IOrderDetailService{
                 .orElseThrow(()->new DataNotFoundException("Cannot find product with id"+orderDetailDTO.getProductId()));
          OrderDetail orderDetail = OrderDetail.builder()
                  .order(order)
-                 .product(product)
+                 .productId(orderDetailDTO.getProductId())
                  .numberOfProducts(orderDetailDTO.getNumberOfProduct())
                  .price(orderDetailDTO.getPrice())
                  .totalMoney(orderDetailDTO.getTotalMoney())
-                 .color(orderDetailDTO.getColor())
+                 .option(orderDetailDTO.getOption())
                  .build();
          return orderDetailRepository.save(orderDetail);
 
@@ -55,9 +55,9 @@ public class OrderDetailService implements IOrderDetailService{
         existingOrderDetail.setPrice(orderDetailDTO.getPrice());
         existingOrderDetail.setNumberOfProducts(orderDetailDTO.getNumberOfProduct());
         existingOrderDetail.setTotalMoney(orderDetailDTO.getTotalMoney());
-        existingOrderDetail.setColor(orderDetailDTO.getColor());
+        existingOrderDetail.setOption(orderDetailDTO.getOption());
         existingOrderDetail.setOrder(existingOrder);
-        existingOrderDetail.setProduct(existingProduct);
+        existingOrderDetail.setProductId(existingProduct.getId());
 
         return orderDetailRepository.save(existingOrderDetail);
     }

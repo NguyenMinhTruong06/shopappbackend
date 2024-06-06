@@ -8,6 +8,7 @@ import com.project.productservice.services.OrderDetailService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,7 +18,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class OrderDetailController {
     private final OrderDetailService orderDetailService;
-        @PostMapping
+        @PostMapping("post")
         public ResponseEntity<?> createDetail(@Valid @RequestBody OrderDetailDTO orderDetailDTO){
             try{
                 OrderDetail newOrderDetail = orderDetailService.createOrderDetail(orderDetailDTO);
@@ -54,6 +55,7 @@ public class OrderDetailController {
             }
 
         }
+
         @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteOrderDetail(@Valid @PathVariable("id")Long id
         ){

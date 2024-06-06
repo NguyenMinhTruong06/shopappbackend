@@ -91,5 +91,26 @@ public class UserController {
 
         return ResponseEntity.ok().body(userChangePass);
     }
+    @GetMapping("/getall")
+    public ResponseEntity<List<User>> getAllUser(){
+//        int roleId=1;
+//
+//        List<User> users = userService.getByRole(Long.valueOf(roleId));
+        List<User> users = userService.findAll();
+        return ResponseEntity.ok(users);
+
+    }
+    @GetMapping("/get/user")
+    public ResponseEntity<List<User>> getAllUserByRoleId(){
+        int roleId=1;
+        List<User>users = userService.findAllUserByRoleId(roleId);
+        return ResponseEntity.ok(users);
+    }
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> deleteUser(@PathVariable Long id,@RequestParam int isActive){
+            userService.deleteUser(id, isActive);
+            return ResponseEntity.ok().body("ok");
+    }
+
 
 }

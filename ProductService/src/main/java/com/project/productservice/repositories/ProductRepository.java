@@ -7,6 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.transaction.annotation.Transactional;
 
 public interface ProductRepository extends JpaRepository<Product,Long> {
     boolean existsByName(String name);
@@ -17,4 +18,6 @@ public interface ProductRepository extends JpaRepository<Product,Long> {
    "and (:keyword is null or :keyword=''or p.name like %:keyword% or p.description like %:keyword%)")
     Page<Product>searchProducts(@Param("categoryId")Long categoryId,
                                 @Param("keyword")String keyword, Pageable pageable);
+
+
 }

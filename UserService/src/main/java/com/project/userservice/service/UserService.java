@@ -21,6 +21,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 
+import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor
@@ -29,7 +30,7 @@ public class UserService implements IUserService{
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
 
-@Autowired
+    @Autowired
     private PasswordEncoder passwordEncoder;
 
     private final JwtTokenUtil jwtTokenUtil;
@@ -132,6 +133,27 @@ public class UserService implements IUserService{
          user.setPassword(newEncodedPassword);
 
          return userRepository.save(user);
+    }
+
+
+    public List<User> findAll(){
+        return  userRepository.getAllBy();
+
+    }
+    @Override
+    public void deleteUser(Long id,int isActive){
+        Optional<User> optionalUser = userRepository.findById(id);
+        if(optionalUser.isPresent()){
+            User user = optionalUser.get();
+            user.setIsActive(isActive);
+            userRepository.save(user);
+        }
+
+    }
+    @Override
+    public List<User> findAllUserByRoleId(int roleId) {
+
+        return userRepository.findByRoleId(roleId);
     }
 
 }
