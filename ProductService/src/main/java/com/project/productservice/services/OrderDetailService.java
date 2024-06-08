@@ -23,11 +23,12 @@ public class OrderDetailService implements IOrderDetailService{
     public OrderDetail createOrderDetail(OrderDetailDTO orderDetailDTO) throws DataNotFoundException {
         Order order = orderRepository.findById(orderDetailDTO.getOrderId())
                 .orElseThrow(()->new DataNotFoundException("cannot find order with id: "+orderDetailDTO.getOrderId()));
-        Product product = productRepository.findById(orderDetailDTO.getProductId())
-                .orElseThrow(()->new DataNotFoundException("Cannot find product with id"+orderDetailDTO.getProductId()));
+//        Product product = productRepository.findById(orderDetailDTO.getProductId())
+//                .orElseThrow(()->new DataNotFoundException("Cannot find product with id"+orderDetailDTO.getProductId()));
          OrderDetail orderDetail = OrderDetail.builder()
                  .order(order)
                  .productId(orderDetailDTO.getProductId())
+                 .productName(orderDetailDTO.getProductName())
                  .numberOfProducts(orderDetailDTO.getNumberOfProduct())
                  .price(orderDetailDTO.getPrice())
                  .totalMoney(orderDetailDTO.getTotalMoney())

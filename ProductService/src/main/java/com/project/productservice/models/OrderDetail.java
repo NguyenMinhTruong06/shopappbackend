@@ -24,6 +24,9 @@ public class OrderDetail {
     @JsonBackReference
     private Order order;
 
+    @Column(name = "product_name")
+    private String productName;
+
 
     @JoinColumn(name = "product_id")
     private Long productId;

@@ -13,6 +13,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
 
@@ -35,12 +36,24 @@ public class OrderService implements IOrderService{
         modelMapper.map(orderDTO, order);
 //        order.setUser(user);
         order.setUserId(Math.toIntExact(user.getId()));
-        order.setOrderDate(new Date());
+        Date orderDate = new Date();
+        order.setOrderDate(orderDate);
+//        order.setOrderDate(new Date());
         order.setStatus(OrderStatus.SHIPPED);
-        LocalDate shippingDate = orderDTO.getShippingDate()== null ? LocalDate.now(): orderDTO.getShippingDate();
-        if (shippingDate== null||shippingDate.isBefore(LocalDate.now())){
-            throw new DataNotFoundException("date must be at least today !");
+        String shippingMethod = orderDTO.getShippingMethod();
+        LocalDate localOrderDate = orderDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        LocalDate shippingDate =null;
+        if(shippingMethod.equals("Hoả tốc")){
+            shippingDate = localOrderDate;
         }
+        if(shippingMethod.equals("Nhanh")){
+            shippingDate = localOrderDate.plusDays(1);
+        }
+        if(shippingMethod.equals("Tiết kiệm")){
+            shippingDate = localOrderDate.plusDays(3);
+        }
+
+
         order.setShippingDate(shippingDate);
         order.setActive(true);
         orderRepository.save(order);

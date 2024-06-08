@@ -7,51 +7,22 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fae16a7d-7191-40d9-b8ac-7a646276c315" name="Changes" comment="bìg update: update option, productimage">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/33dcb605-78e6-4ccc-8778-c4f4b7644f37.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/33dcb605-78e6-4ccc-8778-c4f4b7644f37.xml" afterDir="false" />
+    <list default="true" id="fae16a7d-7191-40d9-b8ac-7a646276c315" name="Changes" comment="update Order and OrderDetail">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/controller/OrderDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/controller/OrderDetailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/controller/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/dtos/OrderDetailDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/dtos/OrderDetailDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/models/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/models/OrderDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/models/OrderDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/models/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/repositories/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/repositories/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/repositories/ProductImageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/repositories/ProductImageRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/repositories/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/repositories/ProductRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/responses/OrderDetailResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/responses/OrderDetailResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/IOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/IOrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/OrderDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/OrderDetailService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/controller/OrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/controller/OrderDetailController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/controller/OrderDetailController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/controller/ProductController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/dtos/OrderDetailDTO$OrderDetailDTOBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/dtos/OrderDetailDTO$OrderDetailDTOBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/dtos/OrderDetailDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/dtos/OrderDetailDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/models/Order$OrderBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/models/Order$OrderBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/models/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/models/Order.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/models/OrderDetail$OrderDetailBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/models/OrderDetail$OrderDetailBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/models/OrderDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/models/OrderDetail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/models/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/models/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/repositories/OrderRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/repositories/OrderRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/repositories/ProductImageRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/repositories/ProductImageRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/responses/OrderDetailResponse$OrderDetailResponseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/responses/OrderDetailResponse$OrderDetailResponseBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/responses/OrderDetailResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/responses/OrderDetailResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/services/IOrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/services/IOrderService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/services/OrderDetailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/services/OrderDetailService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/services/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/services/OrderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/services/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/services/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/src/main/java/com/project/userservice/configurations/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/java/com/project/userservice/configurations/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/src/main/java/com/project/userservice/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/java/com/project/userservice/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/src/main/java/com/project/userservice/respositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/java/com/project/userservice/respositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/src/main/java/com/project/userservice/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/java/com/project/userservice/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/src/main/java/com/project/userservice/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/java/com/project/userservice/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/target/classes/com/project/userservice/configurations/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/target/classes/com/project/userservice/configurations/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/target/classes/com/project/userservice/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/target/classes/com/project/userservice/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/target/classes/com/project/userservice/respositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/target/classes/com/project/userservice/respositories/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/target/classes/com/project/userservice/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/target/classes/com/project/userservice/service/IUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/target/classes/com/project/userservice/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/target/classes/com/project/userservice/service/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,35 +63,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cidr.known.project.marker": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "jdk.selected.JAVA_MODULE": "jbr-17",
-    "last_opened_file_path": "C:/Users/minht/Documents/Code/shopapp_backend",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "show.migrate.to.gradle.popup": "false",
-    "spring.configuration.checksum": "85439dbbdc5e8ad1e4f5bd1e7cca4b4f"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;jbr-17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/minht/Documents/Code/shopapp_backend&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;85439dbbdc5e8ad1e4f5bd1e7cca4b4f&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -150,7 +121,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ProductServiceApplication">
+  <component name="RunManager" selected="Spring Boot.UserService">
     <configuration name="All in DiscoveryServer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DiscoveryServer" />
       <option name="PACKAGE_NAME" value="" />
@@ -275,7 +246,9 @@
       <workItem from="1717464821968" duration="2673000" />
       <workItem from="1717468819557" duration="14889000" />
       <workItem from="1717572893062" duration="20119000" />
-      <workItem from="1717640442548" duration="10317000" />
+      <workItem from="1717640442548" duration="11624000" />
+      <workItem from="1717740365469" duration="16686000" />
+      <workItem from="1717837817652" duration="3541000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1715363304152</created>
@@ -319,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717255180735</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="update Order and OrderDetail">
+      <created>1717689299590</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1717689299590</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,7 +321,8 @@
     <MESSAGE value="xcvcxv" />
     <MESSAGE value="init project" />
     <MESSAGE value="bìg update: update option, productimage" />
-    <option name="LAST_COMMIT_MESSAGE" value="bìg update: update option, productimage" />
+    <MESSAGE value="update Order and OrderDetail" />
+    <option name="LAST_COMMIT_MESSAGE" value="update Order and OrderDetail" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -430,6 +411,46 @@
           <url>file://$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/ProductService.java</url>
           <line>86</line>
           <option name="timeStamp" value="101" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/controller/OrderDetailController.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="102" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/OrderDetailService.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="103" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/OrderDetailService.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="107" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/controller/OrderDetailController.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="114" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/OrderService.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/OrderService.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="125" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/OrderService.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="126" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/OrderService.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="139" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

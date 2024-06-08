@@ -28,11 +28,13 @@ public class OrderDetailResponse {
 
     private Float totalMoney;
     private String option;
+    private String productName;
 
     public static OrderDetailResponse fromOrderDetail(OrderDetail orderDetail){
         return OrderDetailResponse.builder()
                 .id(orderDetail.getId())
                 .orderId(orderDetail.getOrder().getId())
+                .productName(orderDetail.getProductName())
                 .productId(orderDetail.getProductId())
                 .price(orderDetail.getPrice())
                 .numberOfProducts(orderDetail.getNumberOfProducts())
