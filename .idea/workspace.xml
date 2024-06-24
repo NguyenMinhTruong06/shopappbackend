@@ -7,21 +7,18 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fae16a7d-7191-40d9-b8ac-7a646276c315" name="Changes" comment="update Order and OrderDetail">
+    <list default="true" id="fae16a7d-7191-40d9-b8ac-7a646276c315" name="Changes" comment="update update OrderDetail and OrderDetailResponse">
+      <change afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/models/StatusUpdateRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/dtos/OrderDetailDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/dtos/OrderDetailDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/models/OrderDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/models/OrderDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/responses/OrderDetailResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/responses/OrderDetailResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/OrderDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/OrderDetailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/dtos/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/dtos/OrderDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/models/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/models/OrderStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/IOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/IOrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/dtos/OrderDetailDTO$OrderDetailDTOBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/dtos/OrderDetailDTO$OrderDetailDTOBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/dtos/OrderDetailDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/dtos/OrderDetailDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/models/OrderDetail$OrderDetailBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/models/OrderDetail$OrderDetailBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/models/OrderDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/models/OrderDetail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/responses/OrderDetailResponse$OrderDetailResponseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/responses/OrderDetailResponse$OrderDetailResponseBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/responses/OrderDetailResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/responses/OrderDetailResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/controller/OrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/models/OrderStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/models/OrderStatus.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/services/IOrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/services/IOrderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/services/OrderDetailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/services/OrderDetailService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/services/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/services/OrderService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +118,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.UserService">
+  <component name="RunManager" selected="Spring Boot.ProductServiceApplication">
     <configuration name="All in DiscoveryServer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DiscoveryServer" />
       <option name="PACKAGE_NAME" value="" />
@@ -248,7 +245,16 @@
       <workItem from="1717572893062" duration="20119000" />
       <workItem from="1717640442548" duration="11624000" />
       <workItem from="1717740365469" duration="16686000" />
-      <workItem from="1717837817652" duration="3541000" />
+      <workItem from="1717837817652" duration="4843000" />
+      <workItem from="1718079135830" duration="2832000" />
+      <workItem from="1718096510700" duration="7005000" />
+      <workItem from="1718164862457" duration="3647000" />
+      <workItem from="1718253941472" duration="4888000" />
+      <workItem from="1718446551173" duration="609000" />
+      <workItem from="1718525502947" duration="2288000" />
+      <workItem from="1719049177801" duration="4886000" />
+      <workItem from="1719103213385" duration="2203000" />
+      <workItem from="1719242776876" duration="7052000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1715363304152</created>
@@ -299,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717689299590</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="update update OrderDetail and OrderDetailResponse">
+      <created>1717849070709</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1717849070709</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,7 +335,8 @@
     <MESSAGE value="init project" />
     <MESSAGE value="bìg update: update option, productimage" />
     <MESSAGE value="update Order and OrderDetail" />
-    <option name="LAST_COMMIT_MESSAGE" value="update Order and OrderDetail" />
+    <MESSAGE value="update update OrderDetail and OrderDetailResponse" />
+    <option name="LAST_COMMIT_MESSAGE" value="update update OrderDetail and OrderDetailResponse" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -358,11 +372,6 @@
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/UserService/src/main/java/com/project/userservice/controller/UserController.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/UserService/src/main/java/com/project/userservice/filter/JwtTokenFilter.java</url>
           <line>36</line>
           <option name="timeStamp" value="45" />
@@ -386,11 +395,6 @@
           <url>file://$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/controller/ProductController.java</url>
           <line>110</line>
           <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/UserService/src/main/java/com/project/userservice/filter/JwtTokenFilter.java</url>
-          <line>84</line>
-          <option name="timeStamp" value="65" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/controller/ProductController.java</url>
@@ -434,22 +438,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/OrderService.java</url>
-          <line>29</line>
+          <line>31</line>
           <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/OrderService.java</url>
-          <line>56</line>
+          <line>58</line>
           <option name="timeStamp" value="125" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/OrderService.java</url>
-          <line>57</line>
+          <line>59</line>
           <option name="timeStamp" value="126" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/OrderService.java</url>
-          <line>58</line>
+          <line>60</line>
           <option name="timeStamp" value="139" />
         </line-breakpoint>
       </breakpoints>

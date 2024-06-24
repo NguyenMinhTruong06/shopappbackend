@@ -3,6 +3,7 @@ package com.project.productservice.controller;
 import com.project.productservice.dtos.OrderDTO;
 import com.project.productservice.excepions.DataNotFoundException;
 import com.project.productservice.models.Order;
+import com.project.productservice.models.StatusUpdateRequest;
 import com.project.productservice.services.OrderService;
 
 import jakarta.validation.Valid;
@@ -49,6 +50,12 @@ public class OrderController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
 
+    }
+    @PutMapping("/status/{id}")
+    public ResponseEntity<?> updateStatus(@Valid @PathVariable("id")Long orderId,@Valid @RequestBody StatusUpdateRequest statusUpdateRequest){
+        String newStatus = statusUpdateRequest.getStatus();
+        Order order = orderService.updateStatus(orderId, newStatus);
+        return ResponseEntity.ok(order);
     }
 
     @PreAuthorize("hasRole('admin') || hasRole('user')")

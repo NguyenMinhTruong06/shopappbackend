@@ -5,11 +5,13 @@ import com.project.productservice.excepions.DataNotFoundException;
 import com.project.productservice.models.Order;
 import com.project.productservice.models.OrderStatus;
 import com.project.productservice.repositories.OrderRepository;
+import com.project.userservice.exception.ValidationException;
 import com.project.userservice.model.User;
 import com.project.userservice.respositories.UserRepository;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -39,7 +41,7 @@ public class OrderService implements IOrderService{
         Date orderDate = new Date();
         order.setOrderDate(orderDate);
 //        order.setOrderDate(new Date());
-        order.setStatus(OrderStatus.SHIPPED);
+        order.setStatus(OrderStatus.PENDING);
         String shippingMethod = orderDTO.getShippingMethod();
         LocalDate localOrderDate = orderDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         LocalDate shippingDate =null;
@@ -87,6 +89,23 @@ public class OrderService implements IOrderService{
     }
 
     @Override
+    public Order updateStatus(Long id, String newStatus) throws ValidationException {
+        Order order = orderRepository.findById(id).orElseThrow(()->new ValidationException(HttpStatus.BAD_REQUEST,"cannot find order with id: "+id));
+        if (!isValidStatus(newStatus)) {
+            throw new ValidationException(HttpStatus.BAD_REQUEST, "Invalid status: " + newStatus);
+        }
+        order.setStatus(newStatus);
+        return orderRepository.save(order);
+    }
+    private boolean isValidStatus(String status) {
+        return OrderStatus.PENDING.equals(status) ||
+                OrderStatus.PROCESSING.equals(status) ||
+                OrderStatus.SHIPPED.equals(status) ||
+                OrderStatus.DELIVERED.equals(status) ||
+                OrderStatus.CANCELLED.equals(status);
+    }
+
+    @Override
     public void deleteOrder(Long id) throws DataNotFoundException {
         Order order = orderRepository.findById(id).orElse(null);
         if(order!=null){
@@ -101,4 +120,5 @@ public class OrderService implements IOrderService{
 
         return orderRepository.findByUserIdAndActiveTrue(userId);
     }
+
 }

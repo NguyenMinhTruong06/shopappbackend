@@ -31,7 +31,7 @@ public class ProductService implements IProductService{
     private final Cloudinary cloudinary;
 
     private final ProductImageRepository productImageRepository;
-    private final ProductRepository productRepository;
+    private final ProductRepository productRepository;//cái lol này này, đéo gọi đc, đéo biết bị sao, run lên cữ bị lỗi cài cái này chưa
     private final CategoryRepository categoryRepository;
     @Override
     public Product createProduct(ProductDTO productDTO) throws DataNotFoundException {
