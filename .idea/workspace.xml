@@ -7,20 +7,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fae16a7d-7191-40d9-b8ac-7a646276c315" name="Changes" comment="update update OrderDetail and OrderDetailResponse">
-      <change afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/models/StatusUpdateRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/dtos/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/dtos/OrderDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/models/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/models/OrderStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/IOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/IOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/src/main/java/com/project/productservice/services/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/controller/OrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/models/OrderStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/models/OrderStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/services/IOrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/services/IOrderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/services/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProductService/target/classes/com/project/productservice/services/OrderService.class" afterDir="false" />
-    </list>
+    <list default="true" id="fae16a7d-7191-40d9-b8ac-7a646276c315" name="Changes" comment="update update orderStatus" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -254,7 +241,7 @@
       <workItem from="1718525502947" duration="2288000" />
       <workItem from="1719049177801" duration="4886000" />
       <workItem from="1719103213385" duration="2203000" />
-      <workItem from="1719242776876" duration="7052000" />
+      <workItem from="1719242776876" duration="7688000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1715363304152</created>
@@ -312,7 +299,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717849070709</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="update update orderStatus">
+      <created>1719250879032</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1719250879032</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,7 +330,8 @@
     <MESSAGE value="bìg update: update option, productimage" />
     <MESSAGE value="update Order and OrderDetail" />
     <MESSAGE value="update update OrderDetail and OrderDetailResponse" />
-    <option name="LAST_COMMIT_MESSAGE" value="update update OrderDetail and OrderDetailResponse" />
+    <MESSAGE value="update update orderStatus" />
+    <option name="LAST_COMMIT_MESSAGE" value="update update orderStatus" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
